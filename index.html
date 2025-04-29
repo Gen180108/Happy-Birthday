@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Ayah & Mamah | Cinta Terbaikku</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js"></script>
+    <audio id="backgroundMusic" autoplay loop hidden>
+        <source src="lagu.mp3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="musicIcon" class="fixed bottom-8 right-8 text-4xl animate-bounce text-rose-300 z-50">
+        ▶️
+    </div>
+    
+    
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -360,5 +368,17 @@
                 element.remove();
             }, duration * 1000);
         }
+        const music = document.getElementById('backgroundMusic');
+    const icon = document.getElementById('musicIcon');
+
+    icon.addEventListener('click', () => {
+        if (music.paused) {
+            music.play();
+            icon.textContent = '🎵'; // Play icon
+        } else {
+            music.pause();
+            icon.textContent = '🔇'; // Mute icon
+        }
+    });
     </script>    
        
